@@ -1,8 +1,12 @@
-function App() {
+import { Provider as ProviderURQL } from 'urql'
+import { client } from './graphql/client'
+import AppRoutes from './routes/AppRoutes'
+
+const App: React.FC = () => {
   return (
-    <>
-      <div className='flex justify-center'>APP</div>
-    </>
+    <ProviderURQL value={client}>
+      <AppRoutes />
+    </ProviderURQL>
   )
 }
 
