@@ -3,7 +3,6 @@ import { gql } from 'urql'
 export const seasonalMedia = gql`
   query (
     $format: MediaFormat
-    $scoreFormat: ScoreFormat
     $perPage: Int
     $page: Int
     $season: MediaSeason
@@ -18,9 +17,7 @@ export const seasonalMedia = gql`
         seasonYear: $seasonYear
       ) {
         id
-        description
         status
-        isFavourite
         endDate {
           day
           month
@@ -37,18 +34,8 @@ export const seasonalMedia = gql`
         favourites
         episodes
         status
-        chapters
-        volumes
         genres
-        duration
         averageScore
-        rankings {
-          allTime
-          rank
-          season
-          context
-        }
-        popularity
         type
         nextAiringEpisode {
           airingAt
@@ -56,38 +43,15 @@ export const seasonalMedia = gql`
           episode
           mediaId
         }
-        trailer {
-          id
-          site
-          thumbnail
-        }
         title {
-          userPreferred
+          romaji
+          english
           native
         }
         bannerImage
         coverImage {
           large
           color
-        }
-        mediaListEntry {
-          score(format: $scoreFormat)
-          id
-          progress
-          progressVolumes
-          repeat
-          notes
-          status
-          startedAt {
-            year
-            month
-            day
-          }
-          completedAt {
-            year
-            month
-            day
-          }
         }
       }
     }
