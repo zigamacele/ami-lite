@@ -50,7 +50,7 @@ export const seasonalMedia = gql`
         }
         bannerImage
         coverImage {
-          large
+          extraLarge
           color
         }
       }

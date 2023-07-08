@@ -21,7 +21,7 @@ interface MediaTitle {
 }
 
 interface MediaCoverImage {
-  large: string
+  extraLarge: string
   color: string
   __typename: string
 }

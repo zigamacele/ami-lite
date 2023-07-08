@@ -44,7 +44,12 @@ function createWindow() {
 const mb = menubar({
   icon: path.join(__dirname, '..', 'src', 'assets', 'IconTemplate.png'),
   index: VITE_DEV_SERVER_URL,
-  browserWindow: { width: 400, height: 600, alwaysOnTop: true },
+  browserWindow: {
+    width: 400,
+    height: 600,
+    alwaysOnTop: true,
+    resizable: false,
+  },
   showOnAllWorkspaces: false,
 })
 

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "dayjs": "^1.11.9",
+    "framer-motion": "^10.12.18",
     "graphql": "^16.7.1",
     "menubar": "^9.3.0",
     "react": "^18.2.0",
