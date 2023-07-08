@@ -45,10 +45,21 @@ const mb = menubar({
   icon: path.join(__dirname, '..', 'src', 'assets', 'IconTemplate.png'),
   index: VITE_DEV_SERVER_URL,
   browserWindow: { width: 400, height: 600, alwaysOnTop: true },
+  showOnAllWorkspaces: false,
 })
 
 mb.on('ready', () => {
   console.log('app is ready')
+
+  mb.on('show', () => {
+    console.log('app was opened')
+    // mb.window && mb.window.reload()
+  })
+
+  mb.on('hide', () => {
+    console.log('app was hidden')
+    mb.window && mb.window.close()
+  })
 })
 
 mb.on('after-create-window', () => {
