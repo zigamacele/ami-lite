@@ -1,10 +1,12 @@
+import dayjs from 'dayjs'
 import { useQuery } from 'urql'
 import { seasonalMedia } from '../graphql/query/seasonalMedia'
+import { currentAnimeSeason } from '../utils/currentSeason'
 
 const useSeasonalAnime = () => {
   const variables = {
-    season: 'SUMMER',
-    seasonYear: 2023,
+    season: currentAnimeSeason(dayjs().month()),
+    seasonYear: dayjs().year(),
     format: 'TV',
   }
 

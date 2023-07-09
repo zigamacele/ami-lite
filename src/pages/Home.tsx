@@ -1,10 +1,17 @@
-import Spotlight from '../components/Home/Spotlight'
+import IndividualAnime from '../components/Home/IndividualAnime'
+import useSeasonalAnime from '../hooks/useSeasonalAnime'
+import { SeasonalAnime } from '../types/seasonalAnime'
+import { sortObject } from '../utils/sorting'
 
 const Home: React.FC = () => {
+  const { seasonalAnime, isFetching } = useSeasonalAnime()
   return (
-    <div className='bg-neutral-900'>
-      <Spotlight />
-    </div>
+    <section className='flex flex-col items-center gap-4 pb-4 pt-14 bg-neutral-900'>
+      {!isFetching &&
+        sortObject(seasonalAnime.Page.media).map((media: SeasonalAnime) => (
+          <IndividualAnime media={media} key={media.id} />
+        ))}
+    </section>
   )
 }
 
