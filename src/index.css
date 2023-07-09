@@ -9,7 +9,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #171717;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -66,4 +66,16 @@ button:focus-visible {
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+.fade-in {
+  animation: fade-in 2s ease;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
