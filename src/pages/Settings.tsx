@@ -5,7 +5,7 @@ const Settings: React.FC = () => {
   const { username, platform, updateUsername, updatePlatform } = useUserState()
   return (
     <section className='relative flex justify-center pt-14'>
-      <div className='z-10 px-4 border-[1px] border-neutral-600/80 rounded-md aboslute w-80 py-3 bg-neutral-900/80 text-sm'>
+      <div className='z-10 px-4 border-[1px] border-neutral-600/80 rounded-md aboslute w-80 py-3 bg-neutral-900/80 text-sm fade-in-fast'>
         <div className='flex items-center justify-between'>
           <span className='opacity-60'>Platform</span>
           <div className='flex items-center gap-2'>

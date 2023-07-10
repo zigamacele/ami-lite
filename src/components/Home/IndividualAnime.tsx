@@ -2,8 +2,12 @@ import { motion } from 'framer-motion'
 import { CalendarOff, CalendarPlus, ListPlus, Youtube } from 'lucide-react'
 import { useListState } from '../../stores/listStore'
 import { SeasonalAnime } from '../../types/seasonalAnime'
-import { openInNewWindow } from '../../utils/openInNewWindow'
+import {
+  openUpdateWindow,
+  openTrailerWindow,
+} from '../../utils/openInNewWindow'
 import Countdown from './Countdown'
+import { useUserState } from '../../stores/userStore'
 
 interface IndividualAnimeProps {
   media: SeasonalAnime
@@ -11,6 +15,7 @@ interface IndividualAnimeProps {
 
 const IndividualAnime: React.FC<IndividualAnimeProps> = ({ media }) => {
   const { list, updateList } = useListState()
+  const { username, platform } = useUserState()
 
   return (
     <motion.div
@@ -24,7 +29,6 @@ const IndividualAnime: React.FC<IndividualAnimeProps> = ({ media }) => {
           duration: 0.8,
         },
       }}
-      key={media.id}
       className='relative flex items-center justify-center'
     >
       <div className='absolute right-0 z-40 px-2 text-sm border-r rounded-l-full top-14 right bg-neutral-900/80 border-neutral-600/80 backdrop-blur-sm'>
@@ -65,11 +69,21 @@ const IndividualAnime: React.FC<IndividualAnimeProps> = ({ media }) => {
           <div className='flex gap-3 mt-1'>
             <div
               className='flex items-center gap-1 cursor-pointer hover:opacity-60'
-              onClick={() => openInNewWindow(media.title.romaji, 'username')}
+              onClick={() =>
+                openUpdateWindow(
+                  media.id,
+                  media.title.romaji,
+                  username,
+                  platform,
+                )
+              }
             >
               <ListPlus size={18} strokeWidth={1.5} /> <span>Update</span>
             </div>
-            <div className='flex items-center gap-1 cursor-pointer hover:opacity-60'>
+            <div
+              className='flex items-center gap-1 cursor-pointer hover:opacity-60'
+              onClick={() => openTrailerWindow(media.title.romaji)}
+            >
               <Youtube size={18} strokeWidth={1.5} />
               <span>Trailers</span>
             </div>
