@@ -9,6 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/joy": "^5.0.0-alpha.86",
     "dayjs": "^1.11.9",
     "framer-motion": "^10.12.18",
     "graphql": "^16.7.1",
