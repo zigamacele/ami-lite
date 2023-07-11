@@ -9,7 +9,7 @@ Currenly doesn't support authentication.
 
 ## Preview
 
-https://github.com/zigamacele/ami-lite/assets/19758116/2f506f95-abd5-468c-aa1b-15ef0e896fe1
+https://github.com/zigamacele/ami-lite/assets/19758116/b1ce4a10-8a9b-4f8a-916f-b655521fc461
 
 ## Technologies used
 
@@ -18,3 +18,6 @@ https://github.com/zigamacele/ami-lite/assets/19758116/2f506f95-abd5-468c-aa1b-1
 - Electron
 - TypeScript
 - TailwindCSS
+
+
+
